@@ -1,11 +1,206 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ariel G</title>
-</head>
-<body>
-    <h1>eventually my website</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ariel Goldring | Portfolio</title>
+    <meta
+      name="description"
+      content="Ariel Goldring — Computer Science student portfolio. Projects, skills, and contact."
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="styles.css" /> 
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header / Nav -->
+    <header class="site-header">
+      <nav class="nav container" aria-label="Primary">
+        <a class="brand" href="#top" aria-label="Go to top">AG</a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+          Menu
+        </button>
+
+        <div class="nav-links" id="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a class="btn small" href="/assets/Ariel_Goldring_Resume.pdf" target="_blank" rel="noopener">
+            Resume
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero container" id="top">
+        <div class="hero-content">
+          <p class="kicker">Computer Science • Software Developer</p>
+          <h1>Ariel Goldring</h1>
+          <p class="subtitle">
+           TBA
+          </p>
+
+          <div class="cta-row">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn ghost" href="/assets/Ariel_Goldring_Resume.pdf" target="_blank" rel="noopener">
+              Download Resume
+            </a>
+          </div>
+
+          <div class="social-row" aria-label="Social links">
+            <a href="https://github.com/arigoldring" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:your.email@example.com">Email</a>
+          </div>
+        </div>
+
+        <div class="hero-card" role="note" aria-label="Quick highlights">
+          <h2>Highlights</h2>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="section container" id="projects">
+        <div class="section-head">
+          <h2>Projects</h2>
+
+          <div class="controls">
+            <input
+              id="projectSearch"
+              class="input"
+              type="search"
+              placeholder="Search projects…"
+              autocomplete="off"
+            />
+            <select id="tagFilter" class="select" aria-label="Filter by tag">
+                <!-- Skills 
+              <option value="all">All</option>
+              <option value="web">Web</option>
+              <option value="ai">AI</option>
+              <option value="game">Game</option>
+              <option value="school">School</option> -->
+            </select>
+          </div>
+        </div>
+
+        <div id="projectGrid" class="grid"></div>
+      </section>
+
+      <!-- Skills -->
+      <section class="section container" id="skills">
+        <h2>Skills</h2>
+        <div class="columns">
+          <div class="panel">
+            <h3>Languages</h3>
+            <div class="chips">
+              <span class="chip">TypeScript</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">Python</span>
+              <span class="chip">C/C++</span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Frameworks</h3>
+            <div class="chips">
+              <span class="chip">React</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">Express</span>
+              
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Tools</h3>
+            <div class="chips">
+              <span class="chip">Git/GitHub</span>
+              <span class="chip">VS Code</span>
+              
+             
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="section container" id="about">
+        <h2>About</h2>
+        <div class="about">
+          <p>
+           
+          </p>
+
+          <div class="panel">
+            <h3>WIP</h3>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section container" id="contact">
+        <h2>Contact</h2>
+
+        <div class="contact">
+          <div class="panel">
+            <h3>Reach out</h3>
+            <p>
+              
+            </p>
+            <ul class="contact-list">
+              <li><strong>Email:</strong> <a href="mailto:your.email@example.com">arigoldring77@gmail.com</a></li>
+              <li><strong>GitHub:</strong> <a href="https://github.com/arigoldring" target="_blank" rel="noopener">github.com/arigoldring</a></li>
+              <li><strong>LinkedIn:</strong> <a href="TBA" target="_blank" rel="noopener">TBA</a></li>
+            </ul>
+          </div>
+
+          <!-- Static-friendly “contact form” pattern: mailto 
+          <form class="panel" id="mailtoForm">
+            <h3>Quick message</h3>
+
+            <label>
+              Subject
+              <input class="input" name="subject" type="text" placeholder="Recruiter inquiry" />
+            </label>
+
+            <label>
+              Message
+              <textarea class="textarea" name="body" rows="6" placeholder="Hi Ariel, …"></textarea>
+            </label>
+
+            <button class="btn" type="submit">Open Email Draft</button>
+            <p class="muted">
+              (This opens your email app—GitHub Pages is static, so this is the simplest “form.”)
+            </p>
+          </form> -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Ariel Goldring</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
