@@ -8,7 +8,7 @@ const projects = [
     tags: ["web", "security"],
     tech: ["React", "TypeScript", "Supabase", "PostgreSQL", "Cloudflare Pages"],
     github: "https://github.com/arigoldring/strahd-hub",
-    demo: "https://dnd-cos.pages.dev",
+    demo: "https://dnd-cos.pages.dev/#/demo", // /#/demo signs visitors into a shared player account, no login
     image: null, // set to "assets/images/strahd-hub.png" if you add an image
     role: "Solo developer: schema, RLS policies, frontend, and deployment",
   },
