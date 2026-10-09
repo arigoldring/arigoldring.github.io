@@ -6,12 +6,16 @@
     <title>Ariel Goldring | Portfolio</title>
     <meta
       name="description"
-      content="Ariel Goldring — Computer Science student at the University of Delaware and U.S. Army veteran. Full-stack projects, skills, and contact."
+      content="Ariel Goldring: Computer Science student at the University of Delaware and U.S. Army veteran. Projects, experience, and resume."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ariel Goldring | Portfolio" />
+    <meta property="og:description" content="Computer Science student at the University of Delaware and U.S. Army veteran. Projects, experience, and resume." />
+    <meta property="og:url" content="https://arielgoldring.dev/" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
     <link rel="icon" href="/assets/favicon.ico">
-    <link rel="stylesheet" href="styles.css?v=2" />
+    <link rel="stylesheet" href="styles.css?v=3" />
   </head>
 
   <body>
@@ -22,7 +26,7 @@
       <nav class="nav container" aria-label="Primary">
         <a class="brand" href="#top" aria-label="Go to top">AG</a>
 
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
           Menu
         </button>
 
@@ -43,32 +47,33 @@
       <!-- Hero -->
       <section class="hero container" id="top">
         <div class="hero-content">
-          <p class="kicker">Computer Science • Full-Stack Developer • U.S. Army Veteran</p>
+          <p class="kicker">Computer Science Student • Full-Stack Web Development • U.S. Army Veteran</p>
           <h1>Ariel Goldring</h1>
           <p class="subtitle">
-            Computer Science student at the University of Delaware (B.S. expected June 2027)
-            building secure, database-driven web apps with React, TypeScript, and PostgreSQL.
-            Former Army Sergeant and team lead who Loves to Code.
+            Computer Science student at the University of Delaware (B.S. expected June 2027).
+            I build full-stack web apps with React, TypeScript, and PostgreSQL, with a focus on
+            enforcing authorization in the database. Before college, I spent eight years in the
+            Army as a Sergeant and team lead.
           </p>
 
           <div class="cta-row">
             <a class="btn" href="#projects">View Projects</a>
             <a class="btn ghost" href="/assets/Ariel_Goldring_Resume.pdf" target="_blank" rel="noopener">
-              Download Resume
+              Resume (PDF)
             </a>
           </div>
 
-          <div class="social-row" aria-label="Social links">
+          <div class="social-row">
             <a href="https://github.com/arigoldring" target="_blank" rel="noopener">GitHub</a>
-            <button class="link-btn" type="button" data-copy="arigoldring77@gmail.com" aria-label="Copy email address">Copy email</button>
+            <button class="link-btn" type="button" data-copy="arigoldring77@gmail.com" aria-label="Copy email address" aria-live="polite">Copy email</button>
           </div>
         </div>
 
         <div class="hero-card" role="note" aria-label="Quick highlights">
           <h2>Highlights</h2>
           <ul>
-            <li>Solo-built and deployed Strahd Hub: 23 Postgres tables, 47 migrations, 23 row-level security policies</li>
-            <li>Producer for a 24-person game team that shipped <em>Tails of the Tower</em> to itch.io</li>
+            <li>Built and deployed Strahd Hub solo, a React + Postgres app used by 2 D&amp;D groups (~15 users), where 23 row-level security policies control what each user can see</li>
+            <li>Producer for a 24-person team that shipped <em>Tails of the Tower</em>, a 15-week capstone game, to itch.io</li>
             <li>8 years in the U.S. Army / NJ National Guard, leading teams of up to 30 as a Sergeant (E-5)</li>
           </ul>
         </div>
@@ -76,28 +81,84 @@
 
       <!-- Projects -->
       <section class="section container" id="projects">
-        <div class="section-head">
-          <h2>Projects</h2>
+        <h2>Projects</h2>
 
-          <div class="controls">
-            <input
-              id="projectSearch"
-              class="input"
-              type="search"
-              placeholder="Search projects…"
-              autocomplete="off"
-            />
-            <select id="tagFilter" class="select" aria-label="Filter by tag">
-              <option value="all">All</option>
-              <option value="web">Web</option>
-              <option value="ai">AI</option>
-              <option value="game">Game</option>
-              <option value="security">Security</option>
-            </select>
-          </div>
+        <div class="grid">
+          <article class="card featured">
+            <div class="body">
+              <h3>Strahd Hub</h3>
+              <p><strong>Full-stack D&amp;D campaign management app</strong></p>
+              <p>
+                A campaign app used by 2 D&amp;D groups (~15 players) for shared inventory, spellbooks,
+                maps, and NPC records, where the DM controls what each player can see. Authorization
+                lives in Postgres: 23 row-level security policies mean hidden content is never sent to a
+                player's browser, not just hidden in the UI. I also closed a privilege-escalation hole by
+                removing direct UPDATE access on profiles and routing every change through
+                security-definer functions that limit which columns can change.
+              </p>
+              <div class="meta">
+                <span class="badge">React</span>
+                <span class="badge">TypeScript</span>
+                <span class="badge">Vite</span>
+                <span class="badge">TanStack Query</span>
+                <span class="badge">Supabase</span>
+                <span class="badge">PostgreSQL</span>
+                <span class="badge">Cloudflare Pages</span>
+              </div>
+              <p class="muted"><strong>My role:</strong> Solo developer: schema, RLS policies, frontend, and deployment</p>
+              <div class="links">
+                <a href="https://dnd-cos.pages.dev/#/demo" target="_blank" rel="noopener">Live demo (read-only)</a>
+                <a href="https://github.com/arigoldring/strahd-hub" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="shot" src="/assets/images/tails-of-the-tower.jpg" alt="Title screen of Tails of the Tower" width="1157" height="655" loading="lazy" />
+            <div class="body">
+              <h3>Tails of the Tower</h3>
+              <p><strong>15-week team capstone game, released on itch.io</strong></p>
+              <p>
+                A 2D pixel-art hack-and-slash game (about 40 minutes of play) made by a 24-person
+                University of Delaware team. As producer, I managed timeline and scope across 5 sub-teams
+                (art, programming, design, music, writing), working through each team's lead. I designed
+                and ran 3 structured playtests and turned the results into visual summaries the team used
+                to make design decisions.
+              </p>
+              <div class="meta">
+                <span class="badge">Godot</span>
+              </div>
+              <p class="muted"><strong>My role:</strong> Producer: scheduling, scope, playtesting</p>
+              <div class="links">
+                <a href="https://udel.itch.io/tails-of-the-tower" target="_blank" rel="noopener">Play on itch.io</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="body">
+              <h3>Policy Lens</h3>
+              <p><strong>Hackathon web app that explains Terms of Service</strong></p>
+              <p>
+                Built with one teammate at HenHacks 2026. Paste or upload a Terms of Service, pick the
+                topics you care about (data sharing, arbitration, liability), and optionally describe your
+                situation (“I’m a photographer posting to Pinterest…”). It flags the relevant clauses and
+                uses Gemini to summarize each one in plain language.
+              </p>
+              <div class="meta">
+                <span class="badge">React</span>
+                <span class="badge">TypeScript</span>
+                <span class="badge">Tailwind CSS</span>
+                <span class="badge">Node.js</span>
+                <span class="badge">Gemini API</span>
+              </div>
+              <p class="muted"><strong>My role:</strong> Co-creator: Gemini integration (prompt design, response parsing) and highlighting of flagged clauses</p>
+              <div class="links">
+                <a href="https://github.com/arigoldring/policy-lens" target="_blank" rel="noopener">GitHub</a>
+              </div>
+            </div>
+          </article>
         </div>
-
-        <div id="projectGrid" class="grid"></div>
       </section>
 
       <!-- Experience -->
@@ -108,8 +169,8 @@
             <h3>U.S. Army / NJ National Guard</h3>
             <p class="muted">Sergeant (E-5), Senior Team Lead · June 2017 – June 2025 · Worldwide · Lawrenceville, NJ</p>
             <ul>
-              <li>Led teams of up tp 30 personnel in field exercises, coordinating logistics and task execution under time-sensitive operational conditions.</li>
-              <li>Designed a structured physical training program for 10 soldiers, reducing the unit failure rate from 100% to ~20% through individualized planning and progress tracking.</li>
+              <li>Led teams of 4–30 personnel in field exercises, coordinating logistics and task execution under time-sensitive operational conditions.</li>
+              <li>Designed a structured physical training program for 10 soldiers, reducing their APFT failure rate from 100% to ~20% through individualized planning and progress tracking.</li>
               <li>Operated tactical SATCOM systems end-to-end: site surveys, equipment setup, link establishment, and month-long uplink maintenance.</li>
             </ul>
           </div>
@@ -141,12 +202,13 @@
           </div>
 
           <div class="panel">
-            <h3>Frameworks &amp; Libraries</h3>
+            <h3>Frameworks, Libraries &amp; APIs</h3>
             <div class="chips">
               <span class="chip">React</span>
               <span class="chip">Vite</span>
               <span class="chip">TanStack Query</span>
               <span class="chip">Supabase</span>
+              <span class="chip">Google Gemini API</span>
             </div>
           </div>
 
@@ -167,7 +229,6 @@
               <span class="chip">psql</span>
               <span class="chip">Cloudflare Pages</span>
               <span class="chip">VS Code</span>
-              <span class="chip">Google Gemini API</span>
             </div>
           </div>
         </div>
@@ -178,12 +239,12 @@
         <h2>About</h2>
         <div class="about">
           <p>
-            I'm a Computer Science student at the University of Delaware's College of Engineering,
-            based in Newark, DE. Before college I spent eight years in the U.S. Army and NJ National Guard,
-            where I led teams as a Sergeant and ran tactical satellite communications in the field.
-            Today I build full-stack web apps with a focus on getting authorization right at the
-            database layer, and I enjoy the coordination side of software too: producing team
-            game projects, running playtests, and leading a 40+ member student club.
+            I'm a Computer Science student at the University of Delaware, based in Newark, DE.
+            Before college I spent eight years in the U.S. Army and NJ National Guard, leading teams
+            as a Sergeant and running tactical satellite communications in the field. Now I build
+            full-stack web apps, and I care most about getting authorization right at the database
+            layer. I also like the coordination side of software: producing a 24-person game project,
+            running playtests, and leading a 40+ member student club.
           </p>
 
           <div class="panel">
@@ -204,11 +265,11 @@
           <div class="panel">
             <h3>Reach out</h3>
             <p>
-              Open to internships and software engineering roles. The best way to reach me is email.
+              Open to internships and software engineering roles. Email is the best way to reach me.
             </p>
             <ul class="contact-list">
               <li><strong>Email:</strong> <a href="mailto:arigoldring77@gmail.com">arigoldring77@gmail.com</a>
-                <button class="copy-btn" type="button" data-copy="arigoldring77@gmail.com" aria-label="Copy email address">Copy</button>
+                <button class="copy-btn" type="button" data-copy="arigoldring77@gmail.com" aria-label="Copy email address" aria-live="polite">Copy</button>
               </li>
               <li><strong>GitHub:</strong> <a href="https://github.com/arigoldring" target="_blank" rel="noopener">github.com/arigoldring</a></li>
               <li><strong>Location:</strong> Newark, DE</li>
@@ -220,11 +281,11 @@
 
     <footer class="footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> Ariel Goldring</p>
+        <p>© <span id="year">2026</span> Ariel Goldring</p>
         <a href="#top">Back to top</a>
       </div>
     </footer>
 
-    <script src="scripts.js?v=2"></script>
+    <script src="scripts.js?v=3"></script>
   </body>
 </html>
