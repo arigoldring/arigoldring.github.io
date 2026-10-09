@@ -160,6 +160,8 @@ a {
   display: block;
   border-bottom: 1px solid var(--border);
 }
+/* Wide app screenshot: keep its own ratio, show the top of the page if it needs trimming */
+.card.featured .shot { aspect-ratio: auto; max-height: 380px; object-position: top left; }
 
 .card .body { padding: 1.1rem; display: grid; gap: .5rem; }
 .card h3 { margin: 0; }
