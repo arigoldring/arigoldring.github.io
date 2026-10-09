@@ -9,7 +9,7 @@ const projects = [
     tech: ["React", "TypeScript", "Supabase", "PostgreSQL", "Cloudflare Pages"],
     github: "https://github.com/arigoldring/strahd-hub",
     demo: "https://dnd-cos.pages.dev",
-    image: null, // set to "assets/strahd-hub.png" if you add an image
+    image: null, // set to "assets/images/strahd-hub.png" if you add an image
     role: "Solo developer: schema, RLS policies, frontend, and deployment",
   },
   {
@@ -21,7 +21,7 @@ const projects = [
     tech: ["Godot"],
     github: null,
     demo: "https://udel.itch.io/tails-of-the-tower",
-    image: null,
+    image: "assets/images/tails-of-the-tower.png",
     role: "Producer: scheduling, scope, playtesting",
   },
   {
@@ -63,8 +63,8 @@ function matchesFilter(project, query, tag) {
 
 function cardTemplate(p) {
   const thumb = p.image
-    ? `<img src="${p.image}" alt="Screenshot of ${p.title}" style="width:100%;height:180px;object-fit:cover;" />`
-    : `<div class="thumb">${p.title}</div>`;
+    ? `<img class="shot" src="${p.image}" alt="Screenshot of ${p.title}" loading="lazy" />`
+    : "";
 
   const techBadges = p.tech.map((t) => `<span class="badge">${t}</span>`).join("");
   const tagBadges = p.tags.map((t) => `<span class="badge">${t}</span>`).join("");
