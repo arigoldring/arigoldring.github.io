@@ -6,12 +6,12 @@
     <title>Ariel Goldring | Portfolio</title>
     <meta
       name="description"
-      content="Ariel Goldring — Computer Science student portfolio. Projects, skills, and contact."
+      content="Ariel Goldring — Computer Science student at the University of Delaware and U.S. Army veteran. Full-stack projects, skills, and contact."
     />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
     <link rel="icon" href="/assets/favicon.ico">
-    <link rel="stylesheet" href="styles.css" /> 
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
@@ -28,6 +28,7 @@
 
         <div class="nav-links" id="nav-links">
           <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
@@ -42,10 +43,12 @@
       <!-- Hero -->
       <section class="hero container" id="top">
         <div class="hero-content">
-          <p class="kicker">Computer Science • Software Developer</p>
+          <p class="kicker">Computer Science • Full-Stack Developer • U.S. Army Veteran</p>
           <h1>Ariel Goldring</h1>
           <p class="subtitle">
-           TBA
+            Computer Science student at the University of Delaware (B.S. expected June 2027)
+            building secure, database-driven web apps with React, TypeScript, and PostgreSQL.
+            Former Army Sergeant and team lead who ships projects on time with teams of any size.
           </p>
 
           <div class="cta-row">
@@ -57,17 +60,16 @@
 
           <div class="social-row" aria-label="Social links">
             <a href="https://github.com/arigoldring" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="mailto:your.email@example.com">Email</a>
+            <a href="mailto:arigoldring77@gmail.com">Email</a>
           </div>
         </div>
 
         <div class="hero-card" role="note" aria-label="Quick highlights">
           <h2>Highlights</h2>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Solo-built and deployed Strahd Hub: 23 Postgres tables, 47 migrations, 23 row-level security policies</li>
+            <li>Producer for a 24-person game team that shipped <em>Tails of the Tower</em> to itch.io</li>
+            <li>8 years in the U.S. Army / NJ National Guard, leading teams of 4–30 as a Sergeant (E-5)</li>
           </ul>
         </div>
       </section>
@@ -86,12 +88,11 @@
               autocomplete="off"
             />
             <select id="tagFilter" class="select" aria-label="Filter by tag">
-                <!-- Skills 
               <option value="all">All</option>
               <option value="web">Web</option>
               <option value="ai">AI</option>
               <option value="game">Game</option>
-              <option value="school">School</option> -->
+              <option value="security">Security</option>
             </select>
           </div>
         </div>
@@ -99,27 +100,63 @@
         <div id="projectGrid" class="grid"></div>
       </section>
 
+      <!-- Experience -->
+      <section class="section container" id="experience">
+        <h2>Experience</h2>
+        <div class="columns two">
+          <div class="panel">
+            <h3>U.S. Army / NJ National Guard</h3>
+            <p class="muted">Sergeant (E-5), Senior Team Lead · June 2017 – June 2025 · Worldwide · Lawrenceville, NJ</p>
+            <ul>
+              <li>Led teams of 4–30 personnel in field exercises, coordinating logistics and task execution under time-sensitive operational conditions.</li>
+              <li>Designed a structured physical training program for 10 soldiers, reducing the unit failure rate from 100% to ~20% through individualized planning and progress tracking.</li>
+              <li>Operated tactical SATCOM systems end-to-end: site surveys, equipment setup, link establishment, and month-long uplink maintenance.</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h3>University of Delaware D&amp;D Club</h3>
+            <p class="muted">President · August 2023 – June 2026</p>
+            <ul>
+              <li>Negotiated a policy exception with RSO administration to fund a shared D&amp;D Beyond account, expanding simultaneous resource access for 40+ members beyond what physical copies allowed.</li>
+              <li>Coordinated end-to-end logistics for annual Renaissance Faire trips for 40+ members (advertising, payment collection, ticketing, transportation) within university safety policies.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <!-- Skills -->
       <section class="section container" id="skills">
         <h2>Skills</h2>
-        <div class="columns">
+        <div class="columns four">
           <div class="panel">
             <h3>Languages</h3>
             <div class="chips">
               <span class="chip">TypeScript</span>
-              <span class="chip">JavaScript</span>
               <span class="chip">Python</span>
-              <span class="chip">C/C++</span>
+              <span class="chip">SQL</span>
+              <span class="chip">C#</span>
+              <span class="chip">HTML/CSS</span>
             </div>
           </div>
 
           <div class="panel">
-            <h3>Frameworks</h3>
+            <h3>Frameworks &amp; Libraries</h3>
             <div class="chips">
               <span class="chip">React</span>
-              <span class="chip">Node.js</span>
-              <span class="chip">Express</span>
-              
+              <span class="chip">Vite</span>
+              <span class="chip">TanStack Query</span>
+              <span class="chip">Supabase</span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Databases</h3>
+            <div class="chips">
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">Schema design</span>
+              <span class="chip">Row-level security</span>
+              <span class="chip">Migrations</span>
             </div>
           </div>
 
@@ -127,9 +164,10 @@
             <h3>Tools</h3>
             <div class="chips">
               <span class="chip">Git/GitHub</span>
+              <span class="chip">psql</span>
+              <span class="chip">Cloudflare Pages</span>
               <span class="chip">VS Code</span>
-              
-             
+              <span class="chip">Google Gemini API</span>
             </div>
           </div>
         </div>
@@ -140,15 +178,19 @@
         <h2>About</h2>
         <div class="about">
           <p>
-           
+            I'm a Computer Science student at the University of Delaware's College of Engineering,
+            based in Newark, DE. Before college I spent eight years in the U.S. Army and NJ National Guard,
+            where I led teams as a Sergeant and ran tactical satellite communications in the field.
+            Today I build full-stack web apps with a focus on getting authorization right at the
+            database layer, and I enjoy the coordination side of software too: producing team
+            game projects, running playtests, and leading a 40+ member student club.
           </p>
 
           <div class="panel">
-            <h3>WIP</h3>
+            <h3>Education</h3>
             <ul>
-              <li></li>
-              <li></li>
-              <li></li>
+              <li><strong>University of Delaware</strong>, College of Engineering<br />B.S. Computer Science · Expected June 2027</li>
+              <li><strong>University of Maryland Global Campus</strong><br />Associate of Arts · May 2018</li>
             </ul>
           </div>
         </div>
@@ -162,34 +204,14 @@
           <div class="panel">
             <h3>Reach out</h3>
             <p>
-              
+              Open to internships and software engineering roles. The best way to reach me is email.
             </p>
             <ul class="contact-list">
-              <li><strong>Email:</strong> <a href="mailto:your.email@example.com">arigoldring77@gmail.com</a></li>
+              <li><strong>Email:</strong> <a href="mailto:arigoldring77@gmail.com">arigoldring77@gmail.com</a></li>
               <li><strong>GitHub:</strong> <a href="https://github.com/arigoldring" target="_blank" rel="noopener">github.com/arigoldring</a></li>
-              <li><strong>LinkedIn:</strong> <a href="TBA" target="_blank" rel="noopener">TBA</a></li>
+              <li><strong>Location:</strong> Newark, DE</li>
             </ul>
           </div>
-
-          <!-- Static-friendly “contact form” pattern: mailto 
-          <form class="panel" id="mailtoForm">
-            <h3>Quick message</h3>
-
-            <label>
-              Subject
-              <input class="input" name="subject" type="text" placeholder="Recruiter inquiry" />
-            </label>
-
-            <label>
-              Message
-              <textarea class="textarea" name="body" rows="6" placeholder="Hi Ariel, …"></textarea>
-            </label>
-
-            <button class="btn" type="submit">Open Email Draft</button>
-            <p class="muted">
-              (This opens your email app—GitHub Pages is static, so this is the simplest “form.”)
-            </p>
-          </form> -->
         </div>
       </section>
     </main>
@@ -201,6 +223,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
   </body>
 </html>

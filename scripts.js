@@ -1,40 +1,40 @@
 // ====== Simple data-driven projects (edit this!) ======
 const projects = [
   {
-    title: "PolicyLens",
-    tagline: "AI-powered Terms of Service analyzer",
+    title: "Strahd Hub",
+    tagline: "Full-stack D&D campaign management app",
     description:
-      "Scans policies, highlights potentially problematic clauses, and summarizes key sections.",
-    tags: ["web", "ai"],
-    tech: ["React", "TypeScript", "Node"],
-    github: "https://github.com/arigoldring",
-    demo: "#",
-    image: null, // set to "assets/policylens.png" if you add an image
-    role: "Built detector pipeline + UI interactions",
+      "Shared inventory, spellbooks, maps, and NPC records with role-gated visibility, spanning 23 Postgres tables and 47 versioned SQL migrations. Authorization is enforced in the database through 23 row-level security policies, so content hidden from players never leaves the server. Closed a privilege-escalation path by routing every profile mutation through security-definer Postgres functions.",
+    tags: ["web", "security"],
+    tech: ["React", "TypeScript", "Supabase", "PostgreSQL", "Cloudflare Pages"],
+    github: "https://github.com/arigoldring/strahd-hub",
+    demo: "https://dnd-cos.pages.dev",
+    image: null, // set to "assets/strahd-hub.png" if you add an image
+    role: "Solo developer: schema, RLS policies, frontend, and deployment",
   },
   {
-    title: "Unity Tavern Game",
-    tagline: "Team-based game project",
+    title: "Tails of the Tower",
+    tagline: "Semester-long team game, shipped to itch.io",
     description:
-      "Prototype loop: combat → resources → tavern upgrades → repeat. Built in a large team setting.",
+      "Managed timeline and scope for a 24-person dev team across 5 sub-teams (art, programming, design, music, writing). Designed and ran 3 structured playtests and synthesized the findings into visual summaries that drove design decisions.",
     tags: ["game"],
-    tech: ["Unity", "C#"],
-    github: "https://github.com/arigoldring",
-    demo: "#",
+    tech: ["Godot"],
+    github: null,
+    demo: "https://udel.itch.io/tails-of-the-tower",
     image: null,
-    role: "Implemented combat logic + progression hooks",
+    role: "Producer: scheduling, scope, playtesting",
   },
   {
-    title: "D&D Character Builder",
-    tagline: "Web app for creating and exporting characters",
+    title: "Policy Lens",
+    tagline: "Hackathon Chrome extension for Terms of Service",
     description:
-      "Character creation flow with save/load, structured data, and a clean UI for editing.",
-    tags: ["web"],
-    tech: ["Python", "Flask", "JSON"],
-    github: "https://github.com/arigoldring",
-    demo: "#",
+      "Flags concerning clauses in any Terms of Service the user submits. A context input (“I’m a photographer posting to Pinterest…”) and category filters (data use, IP, liability) scope Gemini's analysis to the user's actual concerns.",
+    tags: ["web", "ai"],
+    tech: ["Chrome Extension", "Google Gemini API"],
+    github: null,
+    demo: null,
     image: null,
-    role: "Designed data model + save/load flow",
+    role: "Co-creator: Gemini integration, prompt design, response parsing, in-page highlight overlay",
   },
 ];
 
@@ -64,10 +64,15 @@ function matchesFilter(project, query, tag) {
 function cardTemplate(p) {
   const thumb = p.image
     ? `<img src="${p.image}" alt="Screenshot of ${p.title}" style="width:100%;height:180px;object-fit:cover;" />`
-    : `<div class="thumb">Add a screenshot in /assets</div>`;
+    : `<div class="thumb">${p.title}</div>`;
 
   const techBadges = p.tech.map((t) => `<span class="badge">${t}</span>`).join("");
   const tagBadges = p.tags.map((t) => `<span class="badge">${t}</span>`).join("");
+
+  const links = [
+    p.demo && `<a href="${p.demo}" target="_blank" rel="noopener">Live Demo</a>`,
+    p.github && `<a href="${p.github}" target="_blank" rel="noopener">GitHub</a>`,
+  ].filter(Boolean).join("");
 
   return `
     <article class="card">
@@ -79,10 +84,7 @@ function cardTemplate(p) {
         <div class="meta" aria-label="Tech stack">${techBadges}</div>
         <div class="meta" aria-label="Tags">${tagBadges}</div>
         <p class="muted"><strong>My role:</strong> ${p.role}</p>
-        <div class="links">
-          <a href="${p.demo}" target="_blank" rel="noopener">Live Demo</a>
-          <a href="${p.github}" target="_blank" rel="noopener">GitHub</a>
-        </div>
+        ${links ? `<div class="links">${links}</div>` : ""}
       </div>
     </article>
   `;
@@ -114,13 +116,14 @@ navToggle.addEventListener("click", () => {
 });
 
 // ====== Static contact: open an email draft ======
-mailtoForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const formData = new FormData(mailtoForm);
-  const subject = encodeURIComponent(formData.get("subject") || "");
-  const body = encodeURIComponent(formData.get("body") || "");
+if (mailtoForm) {
+  mailtoForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(mailtoForm);
+    const subject = encodeURIComponent(formData.get("subject") || "");
+    const body = encodeURIComponent(formData.get("body") || "");
 
-  // TODO: put your real email here
-  const to = "your.email@example.com";
-  window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-});
+    const to = "arigoldring77@gmail.com";
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+  });
+}
