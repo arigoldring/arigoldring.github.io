@@ -127,3 +127,19 @@ if (mailtoForm) {
     window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
   });
 }
+
+// ====== Copy-to-clipboard buttons (e.g. email) ======
+document.querySelectorAll("[data-copy]").forEach((btn) => {
+  const label = btn.textContent;
+  btn.addEventListener("click", async () => {
+    const text = btn.dataset.copy;
+    try {
+      await navigator.clipboard.writeText(text);
+      btn.textContent = "Copied!";
+    } catch {
+      // Clipboard blocked: fall back to showing the address so it can be copied by hand
+      window.prompt("Copy this email address:", text);
+    }
+    setTimeout(() => (btn.textContent = label), 1500);
+  });
+});

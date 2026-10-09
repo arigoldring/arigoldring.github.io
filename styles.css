@@ -284,3 +284,24 @@ select option {
 .btn:hover {
   box-shadow: 0 0 15px rgba(96,165,250,0.5);
 }
+.link-btn, .copy-btn {
+  font: inherit;
+  cursor: pointer;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+.link-btn:hover { color: white; }
+
+.copy-btn {
+  margin-left: .5rem;
+  font-size: .85rem;
+  color: var(--text);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.06);
+  padding: .15rem .55rem;
+  border-radius: 999px;
+}
+.copy-btn:hover { color: white; border-color: rgba(96, 165, 250, 0.35); }
